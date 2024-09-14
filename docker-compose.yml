@@ -10,7 +10,7 @@ services:
         NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
     restart: always
     ports:
-      - 3000
+      - 3001
     networks:
       - dokploy-network
     labels:
@@ -18,7 +18,7 @@ services:
       - traefik.http.routers.next-app.rule=Host(`app2.thetelecom.in`)
       - traefik.http.routers.next-app.entrypoints=websecure
       - traefik.http.routers.next-app.tls.certResolver=letsencrypt
-      - traefik.http.services.next-app.loadbalancer.server.port=3000
+      - traefik.http.services.next-app.loadbalancer.server.port=3001
   # Add more containers below (nginx, postgres, etc.)
 
 # Define a network, which allows containers to communicate
